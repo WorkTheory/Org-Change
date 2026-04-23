@@ -1,2 +1,2 @@
 # Org-Change
-WorkTheory org change process website explainer
+WorkTheory change process website explainer
