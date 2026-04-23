@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organisational Change — WorkTheory Co.</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Trebuchet+MS&display=swap');
+  :root {
+    --teal: #1A5C6B;
+    --slate: #4A5568;
+    --sage: #7BAE9F;
+    --offwhite: #F7F7F5;
+    --nearblack: #1C1C1E;
+    --sage-light: #e8f2ef;
+    --teal-light: #e4f0f2;
+    --ex-amber: #C17F3A;
+    --ex-amber-light: #fdf3e7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Calibri', Georgia, serif; background: var(--offwhite); color: var(--nearblack); line-height: 1.7; }
+
+  header {
+    background: var(--teal);
+    padding: 48px 64px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: rgba(123,174,159,0.15);
+  }
+  header::after {
+    content: ''; position: absolute; bottom: -80px; left: 200px;
+    width: 240px; height: 240px; border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .wordmark {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 13px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 24px;
+  }
+  header h1 {
+    font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300;
+    color: white; line-height: 1.15; max-width: 640px; margin-bottom: 16px;
+  }
+  header h1 em { font-style: italic; color: var(--sage); }
+  .header-sub {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 14px;
+    color: rgba(255,255,255,0.65); letter-spacing: 0.04em; max-width: 520px;
+  }
+
+  main { max-width: 880px; margin: 0 auto; padding: 72px 48px; }
+
+  .section-label {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400;
+    color: var(--teal); margin-bottom: 24px; line-height: 1.2;
+  }
+
+  /* EX THREAD BANNER */
+  .ex-banner {
+    background: var(--ex-amber-light);
+    border-left: 4px solid var(--ex-amber);
+    padding: 28px 36px;
+    margin-bottom: 64px;
+  }
+  .ex-banner-label {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--ex-amber); margin-bottom: 10px;
+  }
+  .ex-banner h3 {
+    font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400;
+    color: var(--nearblack); margin-bottom: 10px;
+  }
+  .ex-banner p { font-size: 15px; color: var(--slate); line-height: 1.7; max-width: 680px; }
+
+  /* INTRO */
+  .intro { margin-bottom: 64px; }
+  .intro p { font-size: 18px; color: var(--slate); line-height: 1.75; margin-bottom: 16px; max-width: 720px; }
+  .intro p strong { color: var(--teal); font-weight: 600; }
+
+  /* FOUR STAGE */
+  .four-stage { margin-bottom: 72px; }
+  .stage-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border: 1px solid rgba(26,92,107,0.15); margin-top: 8px; }
+  .stage-card {
+    padding: 28px 22px; border-right: 1px solid rgba(26,92,107,0.15);
+    background: white; position: relative;
+  }
+  .stage-card:last-child { border-right: none; }
+  .stage-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300;
+    color: var(--sage); line-height: 1; margin-bottom: 8px;
+  }
+  .stage-card h4 {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 12px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px;
+  }
+  .stage-card p { font-size: 13px; color: var(--slate); line-height: 1.6; margin-bottom: 12px; }
+  .stage-method { font-size: 11px; color: var(--sage); font-family: 'Trebuchet MS', sans-serif; letter-spacing: 0.06em; font-style: italic; margin-bottom: 10px; }
+  .ex-thread {
+    background: var(--ex-amber-light); border-left: 2px solid var(--ex-amber);
+    padding: 8px 10px; font-size: 12px; color: var(--ex-amber); line-height: 1.5;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  .ex-thread-label { font-weight: bold; display: block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
+
+  /* METHOD CARDS */
+  .methodology { margin-bottom: 72px; }
+  .method-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+  .method-card {
+    background: white; border: 1px solid rgba(26,92,107,0.12);
+    border-top: 3px solid var(--teal); padding: 32px; border-radius: 2px;
+  }
+  .method-card h3 {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 13px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px;
+  }
+  .method-subtitle {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px;
+    font-style: italic; color: var(--nearblack); margin-bottom: 16px; line-height: 1.3;
+  }
+  .method-card p { font-size: 14px; color: var(--slate); line-height: 1.65; }
+  .method-connector {
+    display: flex; align-items: center; justify-content: center;
+    margin: 8px 0; color: var(--sage);
+    font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; gap: 16px;
+  }
+  .method-connector::before, .method-connector::after {
+    content: ''; flex: 1; height: 1px; background: var(--sage); opacity: 0.4;
+  }
+
+  /* 7S */
+  .sevens { margin-bottom: 72px; }
+  .sevens-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 8px; }
+  .s-card { background: white; border: 1px solid rgba(26,92,107,0.1); padding: 22px; border-radius: 2px; position: relative; }
+  .s-card::before {
+    content: attr(data-s); position: absolute; top: -1px; right: 14px;
+    font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300;
+    color: var(--sage); opacity: 0.2; line-height: 1;
+  }
+  .s-card h4 { font-family: 'Trebuchet MS', sans-serif; font-size: 12px; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .s-card p { font-size: 13px; color: var(--slate); line-height: 1.55; margin-bottom: 8px; }
+  .s-card .ex-link { font-size: 11px; color: var(--ex-amber); font-style: italic; }
+  .s-hard { border-top: 2px solid var(--teal); }
+  .s-soft { border-top: 2px solid var(--sage); }
+  .s-legend { display: flex; gap: 24px; margin-top: 16px; font-size: 12px; color: var(--slate); }
+  .s-legend span { display: flex; align-items: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+  /* KOTTER */
+  .kotter { margin-bottom: 72px; }
+  .kotter-phase { margin-bottom: 10px; }
+  .kotter-phase-label {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 8px; padding-left: 4px;
+  }
+  .kotter-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .kotter-step {
+    background: white; border: 1px solid rgba(26,92,107,0.1);
+    padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; border-radius: 2px;
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300;
+    color: var(--sage); line-height: 1; min-width: 26px;
+  }
+  .step-content h4 { font-family: 'Trebuchet MS', sans-serif; font-size: 12px; color: var(--teal); margin-bottom: 4px; letter-spacing: 0.04em; }
+  .step-content p { font-size: 13px; color: var(--slate); line-height: 1.55; margin-bottom: 6px; }
+  .step-content .ex-note { font-size: 11px; color: var(--ex-amber); font-style: italic; }
+
+  /* TABLE */
+  .framework { margin-bottom: 72px; }
+  .framework-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .framework-table thead tr { background: var(--teal); }
+  .framework-table thead th {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase; color: white;
+    padding: 14px 18px; text-align: left; font-weight: normal;
+  }
+  .framework-table thead th.ex-col { color: #f5c98a; }
+  .framework-table tbody tr { border-bottom: 1px solid rgba(26,92,107,0.1); }
+  .framework-table tbody tr:nth-child(even) { background: var(--teal-light); }
+  .framework-table tbody tr:nth-child(odd) { background: white; }
+  .framework-table tbody td { padding: 14px 18px; font-size: 13px; color: var(--slate); vertical-align: top; line-height: 1.55; }
+  .framework-table tbody td:first-child {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); font-weight: 600; white-space: nowrap;
+  }
+  .framework-table tbody td.ex-col { color: var(--ex-amber); font-style: italic; }
+
+  /* POSITIONING */
+  .positioning {
+    background: var(--teal); padding: 48px 56px; margin-bottom: 64px;
+    position: relative; overflow: hidden;
+  }
+  .positioning::before {
+    content: '\201C'; position: absolute; top: -20px; left: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 180px;
+    color: rgba(255,255,255,0.06); line-height: 1;
+  }
+  .positioning p {
+    font-family: 'Cormorant Garamond', serif; font-size: 25px; font-style: italic;
+    font-weight: 300; color: white; line-height: 1.55; max-width: 660px; position: relative; z-index: 1;
+  }
+  .positioning .attribution {
+    font-family: 'Trebuchet MS', sans-serif; font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-top: 20px;
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--sage-light); border-left: 3px solid var(--teal);
+    padding: 36px 40px; display: flex; justify-content: space-between; align-items: center; gap: 32px;
+  }
+  .cta p { font-size: 16px; color: var(--slate); line-height: 1.6; max-width: 520px; }
+  .cta p strong { color: var(--teal); display: block; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .cta-contact { text-align: right; white-space: nowrap; }
+  .cta-contact a { display: block; font-family: 'Trebuchet MS', sans-serif; font-size: 13px; color: var(--teal); text-decoration: none; margin-bottom: 4px; }
+
+  footer { background: var(--nearblack); padding: 24px 64px; display: flex; justify-content: space-between; align-items: center; }
+  footer span { font-family: 'Trebuchet MS', sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+  @media (max-width: 700px) {
+    header { padding: 36px 24px; }
+    header h1 { font-size: 36px; }
+    main { padding: 48px 20px; }
+    .stage-grid, .method-cards, .sevens-grid, .kotter-row { grid-template-columns: 1fr; }
+    .cta { flex-direction: column; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">WorkTheory Co. &nbsp;·&nbsp; Executive People Strategy</div>
+  <h1>Organisational Change<br><em>Designed Around People</em></h1>
+  <p class="header-sub">Structured, human-centred change leadership for New Zealand organisations navigating transformation — with employee experience at the core.</p>
+</header>
+
+<main>
+
+  <!-- EX BANNER -->
+  <div class="ex-banner">
+    <div class="ex-banner-label">WorkTheory Differentiator</div>
+    <h3>Change that works for the business — and for the people in it.</h3>
+    <p>Most change programs focus on what needs to change. WorkTheory asks a harder question: <strong>what will it feel like to live through this change?</strong> Employee experience isn't a soft consideration — it's a leading indicator of whether change will stick. We design every stage of our change engagements with EX as an explicit lens, not an afterthought.</p>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <p>Change is rarely the problem. <strong>Unstructured change is.</strong> When organisations move fast without a disciplined approach to people, culture, and alignment, transformation programs stall — not because the strategy is wrong, but because the conditions for change were never properly designed.</p>
+    <p>WorkTheory's change model brings together <strong>McKinsey 7S</strong> to diagnose what's misaligned, <strong>Kotter's 8-Step Model</strong> to structure and lead the response, and an <strong>employee experience thread</strong> woven through every stage — ensuring change is designed well and felt well.</p>
+  </section>
+
+  <!-- FOUR STAGE -->
+  <section class="four-stage">
+    <div class="section-label">The WorkTheory Model</div>
+    <h2>Four stages. One consistent EX thread.</h2>
+    <div class="stage-grid">
+      <div class="stage-card">
+        <div class="stage-num">01</div>
+        <h4>Diagnose</h4>
+        <p>Understand what's misaligned, where the organisation is, and what's driving the need for change.</p>
+        <div class="stage-method">McKinsey 7S assessment</div>
+        <div class="ex-thread"><span class="ex-thread-label">EX Lens</span>How are employees experiencing the organisation right now? Pulse, friction, sentiment.</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">02</div>
+        <h4>Design</h4>
+        <p>Build the change strategy, coalition, vision and engagement approach from the ground up.</p>
+        <div class="stage-method">Kotter Steps 1–4</div>
+        <div class="ex-thread"><span class="ex-thread-label">EX Lens</span>How will change land for employees? What does a good transition experience look like?</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">03</div>
+        <h4>Enable</h4>
+        <p>Remove barriers, build capability, execute comms and engagement — actively lead the change.</p>
+        <div class="stage-method">Kotter Steps 5–6</div>
+        <div class="ex-thread"><span class="ex-thread-label">EX Lens</span>Are employees equipped, informed and supported? Is the change experience fair and human?</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">04</div>
+        <h4>Sustain</h4>
+        <p>Embed change in culture and operating model. Measure outcomes. Govern for longevity.</p>
+        <div class="stage-method">Kotter Steps 7–8</div>
+        <div class="ex-thread"><span class="ex-thread-label">EX Lens</span>Is the new way of working actually better for people? Are we measuring EX outcomes?</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="methodology">
+    <div class="section-label">Methodological Engine</div>
+    <h2>Two frameworks. One integrated approach.</h2>
+    <div class="method-cards">
+      <div class="method-card">
+        <h3>Diagnose</h3>
+        <div class="method-subtitle">McKinsey 7S Framework</div>
+        <p>Before designing change, we need to understand what's actually misaligned. The 7S Framework maps seven interdependent elements of your organisation — identifying gaps and why previous change efforts may have fallen short. The soft elements — Style, Staff, Shared Values — are where employee experience lives.</p>
+      </div>
+      <div class="method-card">
+        <h3>Design &amp; Lead</h3>
+        <div class="method-subtitle">Kotter's 8-Step Model</div>
+        <p>Once we understand the landscape, Kotter gives us the architecture to lead change with discipline — building urgency, coalition, and momentum in the right sequence. Steps 4 and 5 (enlisting the volunteer army and removing barriers) are fundamentally about the quality of the change experience for employees.</p>
+      </div>
+    </div>
+    <div class="method-connector">used together — with EX as the constant thread</div>
+  </section>
+
+  <!-- 7S -->
+  <section class="sevens">
+    <div class="section-label">Diagnostic Foundation</div>
+    <h2>McKinsey 7S — Understanding what's misaligned</h2>
+    <div class="sevens-grid">
+      <div class="s-card s-hard" data-s="S">
+        <h4>Strategy</h4>
+        <p>Is your people strategy aligned to business direction? Where is the gap?</p>
+        <div class="ex-link">EX impact: low alignment creates confusion and disengagement</div>
+      </div>
+      <div class="s-card s-hard" data-s="S">
+        <h4>Structure</h4>
+        <p>Reporting lines, layers, spans of control. How the organisation is divided and coordinated.</p>
+        <div class="ex-link">EX impact: unclear structure creates role ambiguity and frustration</div>
+      </div>
+      <div class="s-card s-hard" data-s="S">
+        <h4>Systems</h4>
+        <p>Processes, workflows and technology. How work actually gets done day to day.</p>
+        <div class="ex-link">EX impact: broken systems erode trust and daily experience</div>
+      </div>
+      <div class="s-card s-soft" data-s="S">
+        <h4>Shared Values</h4>
+        <p>The beliefs and culture at the centre of the organisation. The foundation everything rests on.</p>
+        <div class="ex-link">EX impact: values misalignment is the #1 driver of attrition</div>
+      </div>
+      <div class="s-card s-soft" data-s="S">
+        <h4>Style</h4>
+        <p>Leadership approach and how leaders behave. What they model, reward and tolerate.</p>
+        <div class="ex-link">EX impact: leadership style is the single greatest EX variable</div>
+      </div>
+      <div class="s-card s-soft" data-s="S">
+        <h4>Staff</h4>
+        <p>People — their capabilities, roles, and how they're developed, motivated and retained.</p>
+        <div class="ex-link">EX impact: investment in staff is felt immediately and directly</div>
+      </div>
+      <div class="s-card s-soft" data-s="S" style="grid-column: 1 / -1; max-width: 290px;">
+        <h4>Skills</h4>
+        <p>Core competencies of the organisation — what it does well and what it needs to build.</p>
+        <div class="ex-link">EX impact: capability gaps create anxiety and reduce confidence</div>
+      </div>
+    </div>
+    <div class="s-legend">
+      <span><span class="dot" style="background:var(--teal)"></span> Hard elements — easier to define and change</span>
+      <span><span class="dot" style="background:var(--sage)"></span> Soft elements — where EX lives most strongly</span>
+    </div>
+  </section>
+
+  <!-- KOTTER -->
+  <section class="kotter">
+    <div class="section-label">Change Leadership Model</div>
+    <h2>Kotter's 8 Steps — Leading change with discipline</h2>
+
+    <div class="kotter-steps">
+      <div class="kotter-phase">
+        <div class="kotter-phase-label">Phase 1 — Create the climate for change</div>
+        <div class="kotter-row">
+          <div class="kotter-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Create Urgency</h4>
+              <p>Build a compelling case for why change is necessary now.</p>
+              <div class="ex-note">EX: employees need to understand the why before they can engage with the how</div>
+            </div>
+          </div>
+          <div class="kotter-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Build the Guiding Coalition</h4>
+              <p>Assemble a team with authority, credibility and energy to lead change.</p>
+              <div class="ex-note">EX: coalition must include voices that employees trust</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kotter-phase">
+        <div class="kotter-phase-label">Phase 2 — Engage and enable the organisation</div>
+        <div class="kotter-row">
+          <div class="kotter-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Form a Strategic Vision</h4>
+              <p>Define what the future looks like. Make it simple, credible, and inspiring.</p>
+              <div class="ex-note">EX: vision must answer "what does this mean for me?"</div>
+            </div>
+          </div>
+          <div class="kotter-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Enlist a Volunteer Army</h4>
+              <p>Move beyond the coalition — engage broadly so change becomes a shared movement.</p>
+              <div class="ex-note">EX: this is where employee experience of change is most shaped</div>
+            </div>
+          </div>
+        </div>
+        <div class="kotter-row">
+          <div class="kotter-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>Enable Action by Removing Barriers</h4>
+              <p>Identify and dismantle structural, cultural and process obstacles.</p>
+              <div class="ex-note">EX: unremoved barriers signal to employees that change isn't real</div>
+            </div>
+          </div>
+          <div class="kotter-step">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h4>Generate Short-Term Wins</h4>
+              <p>Design early visible wins to build confidence and maintain momentum.</p>
+              <div class="ex-note">EX: wins make change feel achievable — critical for morale</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kotter-phase">
+        <div class="kotter-phase-label">Phase 3 — Implement and sustain</div>
+        <div class="kotter-row">
+          <div class="kotter-step">
+            <div class="step-num">7</div>
+            <div class="step-content">
+              <h4>Sustain Acceleration</h4>
+              <p>Use early wins to drive deeper change across systems, structures and behaviours.</p>
+              <div class="ex-note">EX: pace and communication must stay human — fatigue is real</div>
+            </div>
+          </div>
+          <div class="kotter-step">
+            <div class="step-num">8</div>
+            <div class="step-content">
+              <h4>Institute the Change</h4>
+              <p>Embed new behaviours in culture, leadership and systems so change sticks.</p>
+              <div class="ex-note">EX: change is only sustained when it becomes the new normal for people</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="framework">
+    <div class="section-label">Integrated Framework</div>
+    <h2>How it all maps together</h2>
+    <table class="framework-table">
+      <thead>
+        <tr>
+          <th>WorkTheory Stage</th>
+          <th>What we do</th>
+          <th>7S Focus</th>
+          <th>Kotter Steps</th>
+          <th class="ex-col">EX Question</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Diagnose</td>
+          <td>Map seven elements, identify misalignments, surface root causes</td>
+          <td>Full 7S — hard and soft elements</td>
+          <td>Informs Steps 1–2</td>
+          <td class="ex-col">How are employees experiencing the org right now?</td>
+        </tr>
+        <tr>
+          <td>Design</td>
+          <td>Change strategy, vision, guiding coalition, engagement approach</td>
+          <td>Strategy, Structure, Shared Values</td>
+          <td>Steps 1–4</td>
+          <td class="ex-col">How will this change land for people?</td>
+        </tr>
+        <tr>
+          <td>Enable</td>
+          <td>Remove barriers, build capability, execute communications</td>
+          <td>Systems, Skills, Staff</td>
+          <td>Steps 5–6</td>
+          <td class="ex-col">Are employees equipped and supported through transition?</td>
+        </tr>
+        <tr>
+          <td>Sustain</td>
+          <td>Embed in culture, measure outcomes, govern for longevity</td>
+          <td>Style, Shared Values, Systems</td>
+          <td>Steps 7–8</td>
+          <td class="ex-col">Is the new way of working better for people?</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- POSITIONING -->
+  <div class="positioning">
+    <p>"We diagnose with 7S, lead with Kotter, and measure success by whether the change was good for the business and good for the people in it. That last part is what most change programs miss — and why so many don't stick."</p>
+    <div class="attribution">WorkTheory Co. &nbsp;·&nbsp; Organisational Change Practice</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p>
+      <strong>Ready to design your change program?</strong>
+      Every engagement begins with a 30-minute discovery conversation. We'll help you understand what's misaligned, what change needs to look like, and how to design an experience employees can move through with confidence.
+    </p>
+    <div class="cta-contact">
+      <a href="mailto:hello@worktheory.co.nz">hello@worktheory.co.nz</a>
+      <a href="https://worktheory.co.nz">worktheory.co.nz</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>WorkTheory Co. &nbsp;·&nbsp; Better Work by Design</span>
+  <span>New Zealand &nbsp;·&nbsp; All fees NZD excl. GST</span>
+</footer>
+</body>
+</html>
